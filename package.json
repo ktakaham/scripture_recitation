@@ -6,17 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check-types": "tsc --noEmit",
+    "lint": "next lint --fix",
+    "path": "pathpida --enableStatic  -o ./src/utils/pathpida",
+    "codegen": "graphql-codegen --require dotenv/config --config src/utils/apollo/codegen.js dotenv_config_path=.env.local"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.103",
+    "@mui/material": "^5.10.9",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
-    "eslint": "8.26.0",
+    "axios": "^1.1.3",
     "eslint-config-next": "13.0.2",
+    "framer-motion": "^6.5.1",
     "next": "13.0.2",
+    "pathpida": "^0.18.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.1",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-plugin-react": "^7.31.10"
   }
 }
