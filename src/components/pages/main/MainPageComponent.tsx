@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { DragDropContext } from "react-beautiful-dnd";
 
 export const MainPageComponent = () => {
   let [array, setArray] = useState(null);
@@ -37,7 +38,7 @@ export const MainPageComponent = () => {
   };
 
   return (
-    <Container maxW="900px">
+    <Container maxW="1200px">
       <Center h="100px" mt={50}>
         <Heading lineHeight="tall">あんしょうせいく</Heading>
       </Center>
@@ -47,14 +48,16 @@ export const MainPageComponent = () => {
             <Table variant="simple">
               <Thead>
                 <Tr>
+                  <Th w="4">ばんごう</Th>
                   <Th>みことば</Th>
                   <Th w="4">かくすボタン</Th>
                   <Th w="4">みるボタン</Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {array.map((text) => (
+                {array.map((text, index) => (
                   <Tr key={text}>
+                    <Td>{index + 1}</Td>
                     <Td>
                       <Heading lineHeight="tall">
                         <Highlight
@@ -72,7 +75,7 @@ export const MainPageComponent = () => {
                     </Td>
                     <Td>
                       <Button
-                        colorScheme="blue"
+                        colorScheme="green"
                         size="sm"
                         onClick={(e) => {
                           setHide([...hide, text]);

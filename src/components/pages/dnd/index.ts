@@ -1,0 +1,1 @@
+export { dndPageComponent } from "./DndPageComponent";
